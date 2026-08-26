@@ -1,0 +1,31 @@
+@startuml
+
+enum Naipe {
+    COPAS,PAUS,ESPADAS,OUROS
+}
+
+enum ValorCarta {
+    AS,DOIS,TRES,QUATRO,CINCO,SEIS,SETE,OITO,NOVE,DEZ,VALETE,DAMA,REI
+}
+
+class Carta {
+    - naipe:Naipe
+    - valor:ValorCarta
+}
+
+class Baralho {
+    + inicializa():
+    + embaralha():
+    + pegaDeCima():Carta
+}
+
+class Deck {
+    + adicionaCarta(Carta carta):
+    + embaralha():
+    + pegaDeCima():Carta
+}
+
+Carta ..> Naipe
+Carta ..> ValorCarta
+Baralho "1" -- "52" Carta
+@enduml
