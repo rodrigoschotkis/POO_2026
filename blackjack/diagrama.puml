@@ -21,11 +21,31 @@ class Baralho {
 
 class Deck {
     + adicionaCarta(Carta carta):
-    + embaralha():
-    + pegaDeCima():Carta
+    + soma():int
+    + limpa():
+}
+
+class Jogador {
+    - nome:String
+    - deck:Deck
+}
+
+class Blackjack {
+    - baralho:Baralho
+    - jogador1:Jogador
+    - jogador2:Jogador
+    + iniciarJogo():
+    + pedeCarta(jogador:Jogador)
+    + passaVez(jogador:Jogador)
+    + verificaVencedor():Jogador
 }
 
 Carta ..> Naipe
 Carta ..> ValorCarta
-Baralho "1" -- "52" Carta
+Baralho "1" --> "52" Carta
+Deck "1" --> "*" Carta
+Jogador "1" --> "1" Deck
+Blackjack "1" --> "2" Jogador
+Blackjack "1" --> "1" Baralho
+
 @enduml
