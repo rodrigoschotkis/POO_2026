@@ -16,7 +16,7 @@ mvn compile
 ## Como executar
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.exemplo.App"
+mvn exec:java -Dexec.mainClass="com.exemplo.Main"
 ```
 
 ## Como executar os testes
